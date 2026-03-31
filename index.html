@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaShop | Tu Marketplace de Confianza</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/src/index.css">
+  </head>
+  <body class="bg-gray-50 text-gray-900 font-sans antialiased flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-md border-b border-gray-100 z-40 transition-all shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <a href="#home" class="flex items-center gap-2 group">
+            <div class="bg-gray-900 text-white p-1.5 rounded-lg group-hover:bg-blue-600 transition-colors">
+              <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+            </div>
+            <span class="text-xl font-bold tracking-tight">NovaShop</span>
+          </a>
+
+          <!-- Search (Desktop) -->
+          <div class="hidden md:flex flex-1 max-w-xl mx-8">
+            <div class="relative w-full">
+              <input type="text" placeholder="Buscar productos, marcas y más..." class="w-full bg-gray-100 border-transparent focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 rounded-full py-2.5 pl-5 pr-12 text-sm transition-all shadow-inner">
+              <button class="absolute right-2 top-1.5 p-1.5 bg-gray-900 text-white rounded-full hover:bg-blue-600 transition-colors">
+                <i data-lucide="search" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex items-center gap-2 sm:gap-4">
+            <a href="#category-all" class="text-sm font-medium text-gray-600 hover:text-gray-900 hidden lg:block mr-4">Catálogo</a>
+            <a href="#home" class="text-sm font-medium text-red-500 hover:text-red-600 hidden lg:block mr-4 flex items-center gap-1"><i data-lucide="flame" class="w-4 h-4"></i> Ofertas</a>
+            
+            <button class="text-gray-600 hover:text-gray-900 hidden sm:block p-2 rounded-full hover:bg-gray-100 transition-colors">
+              <i data-lucide="user" class="w-6 h-6"></i>
+            </button>
+            <button id="cart-btn" class="relative text-gray-600 hover:text-gray-900 p-2 rounded-full hover:bg-gray-100 transition-colors">
+              <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+              <span id="cart-count" class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center transform translate-x-1 -translate-y-1 shadow-sm border-2 border-white hidden">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="app-content" class="flex-grow pt-16"></main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-blue-600">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div>
+            <div class="flex items-center gap-2 mb-6">
+              <div class="bg-white text-gray-900 p-1.5 rounded-lg">
+                <i data-lucide="shopping-bag" class="w-6 h-6"></i>
+              </div>
+              <span class="text-2xl font-bold tracking-tight">NovaShop</span>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">Tu destino número uno para encontrar los mejores productos con la mejor calidad y precio del mercado. Innovación y estilo a tu alcance.</p>
+            <div class="flex gap-4">
+              <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors"><i data-lucide="youtube" class="w-5 h-5"></i></a>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-bold mb-6 uppercase tracking-wider text-gray-300">Categorías</h3>
+            <ul class="space-y-3">
+              <li><a href="#category-electronica" class="text-gray-400 hover:text-white hover:underline transition-all">Electrónica</a></li>
+              <li><a href="#category-hogar" class="text-gray-400 hover:text-white hover:underline transition-all">Hogar y Muebles</a></li>
+              <li><a href="#category-moda" class="text-gray-400 hover:text-white hover:underline transition-all">Moda y Accesorios</a></li>
+              <li><a href="#category-fitness" class="text-gray-400 hover:text-white hover:underline transition-all">Deportes y Fitness</a></li>
+              <li><a href="#category-gaming" class="text-gray-400 hover:text-white hover:underline transition-all">Gaming</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-6 uppercase tracking-wider text-gray-300">Ayuda</h3>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-gray-400 hover:text-white hover:underline transition-all">Centro de Ayuda</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white hover:underline transition-all">Rastrear Pedido</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white hover:underline transition-all">Devoluciones</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white hover:underline transition-all">Opciones de Envío</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white hover:underline transition-all">Garantías</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-6 uppercase tracking-wider text-gray-300">Contacto</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 text-gray-400">
+                <i data-lucide="map-pin" class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5"></i>
+                <span class="text-sm">123 Tech Avenue, Silicon Valley, CA 94025</span>
+              </li>
+              <li class="flex items-center gap-3 text-gray-400">
+                <i data-lucide="phone" class="w-5 h-5 text-blue-500 flex-shrink-0"></i>
+                <span class="text-sm">+1 (800) 123-4567</span>
+              </li>
+              <li class="flex items-center gap-3 text-gray-400">
+                <i data-lucide="mail" class="w-5 h-5 text-blue-500 flex-shrink-0"></i>
+                <span class="text-sm">soporte@novashop.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-gray-500 text-sm">© 2026 NovaShop. Todos los derechos reservados.</p>
+          <div class="flex gap-4 text-sm text-gray-500">
+            <a href="#" class="hover:text-white transition-colors">Términos de Servicio</a>
+            <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-overlay" class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full sm:w-[400px] bg-white z-50 transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col border-l border-gray-100">
+      <div class="p-5 border-b border-gray-100 flex justify-between items-center bg-gray-50">
+        <h2 class="text-xl font-bold text-gray-900 flex items-center gap-2"><i data-lucide="shopping-cart" class="w-5 h-5"></i> Tu Carrito</h2>
+        <button id="close-cart" class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-200 rounded-full transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div id="cart-items" class="flex-grow overflow-y-auto p-5 space-y-5 bg-white">
+        <!-- Items injected here -->
+      </div>
+      <div class="p-6 border-t border-gray-100 bg-gray-50">
+        <div class="flex justify-between mb-2 text-sm text-gray-500">
+          <span>Subtotal</span>
+          <span id="cart-subtotal" class="font-medium text-gray-900">--</span>
+        </div>
+        <div class="flex justify-between mb-4 text-sm text-gray-500">
+          <span>Envío</span>
+          <span class="font-medium text-green-600">Gratis</span>
+        </div>
+        <div class="flex justify-between mb-6 pt-4 border-t border-gray-200">
+          <span class="font-bold text-gray-900 text-lg">Total</span>
+          <span id="cart-total" class="font-extrabold text-2xl text-gray-900">$0.00</span>
+        </div>
+        <button onclick="alert('Funcionalidad de pago simulada. ¡Gracias por probar NovaShop!')" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:bg-gray-900 transition-colors shadow-lg shadow-blue-600/20 flex items-center justify-center gap-2">
+          Proceder al pago <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </button>
+        <p class="text-center text-xs text-gray-400 mt-4 flex items-center justify-center gap-1"><i data-lucide="lock" class="w-3 h-3"></i> Pago seguro garantizado</p>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+
